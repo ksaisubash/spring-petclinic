@@ -16,6 +16,17 @@ pipeline {
                 sh 'mvn package'
                   }
                       }
+             
         
-    }
+
+        stage('archive facts')
+            step{
+               includes : '**/target/*.jar' 
+            }
+    stage('reporting') {
+            steps {
+                junit testResults: 'target/surefire-reports/*.xml'
+            }
+        }
+      }
 }
