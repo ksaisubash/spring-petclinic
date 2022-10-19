@@ -19,7 +19,7 @@ pipeline {
              
         stage('archive facts'){
             steps {
-               includes : 'target/*.jar' 
+               includes : '**/target/*.jar' 
             }
         }
     stage('reporting') {
