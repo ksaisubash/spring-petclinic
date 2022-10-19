@@ -1,8 +1,8 @@
 pipeline {
-    triggers {
-        cron('* * * * *')
-      }
     agent { label 'ubuntu_node-1' }
+    triggers {
+        cron('*/5 * * * *')
+      }
     stages {
         stage('Source Code') {
             steps {
