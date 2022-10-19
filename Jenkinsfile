@@ -1,4 +1,7 @@
 pipeline {
+    triggers {
+        cron('* * * * *')
+      }
     agent { label 'ubuntu_node-1' }
     stages {
         stage('Source Code') {
@@ -13,8 +16,6 @@ pipeline {
                 sh 'mvn package'
                   }
                       }
-        triggers {
-        cron('* * * * *')
-      }
+        
     }
 }
