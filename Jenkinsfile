@@ -17,10 +17,11 @@ pipeline {
                   }
                       }
              
-        stage('archive facts')
-            steps{
+        stage('archive facts'){
+            steps {
                includes : '**/target/*.jar' 
             }
+        }
     stage('reporting') {
             steps {
                 junit testResults: 'target/surefire-reports/*.xml'
