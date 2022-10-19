@@ -17,10 +17,8 @@ pipeline {
                   }
                       }
              
-        
-
         stage('archive facts')
-            step{
+            steps{
                includes : '**/target/*.jar' 
             }
     stage('reporting') {
